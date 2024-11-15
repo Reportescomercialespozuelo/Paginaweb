@@ -120,8 +120,10 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    z-index: 2;
+    position: relative;
 }
 
 /* Estilos para hacer toda la tarjeta clickeable */
@@ -165,3 +167,4 @@ body {
     background-color: #1a1a1a;
     color: #fff;
 }
+
