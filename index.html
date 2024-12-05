@@ -6,6 +6,9 @@
     <title>Inteligencia y Analítica Comercial</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<button id="audio-button" onclick="toggleAudio()">Activar Audio</button>
+
 <body>
     <audio id="background-music" loop muted>
         <source src="musica.webm" type="audio/webm">
@@ -15,25 +18,38 @@
    
 
     <header class="header">
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo de la Compañía" class="company-logo">
-        </div> 
-        <button id="audio-button" onclick="toggleAudio()">
-        Activar Audio
-        </button>
-        <div class="header-text">
-            <span class="line">Inteligencia y Analítica</span>
-            <span class="line">Comercial</span>
+        <!-- Logos del lado izquierdo -->
+        <div class="logo-container left-logos">
+            <img src="Negocios/pz.png" alt="Logo 1" class="company-logo logo-pz">
+            <img src="Negocios/be.png" alt="Logo 2" class="company-logo logo-be">
+            <img src="Negocios/cnch.png" alt="Logo 3" class="company-logo logo-cnch">
+            <img src="Negocios/mn.png" alt="Logo 4" class="company-logo logo-mn">
+            <img src="Negocios/tm.png" alt="Logo 5" class="company-logo logo-tm">
+            <img src="Negocios/cc.png" alt="Logo 6" class="company-logo logo-cc">
+        </div>
+    
+        <!-- Logos del lado derecho -->
+        <div class="logo-container right-logos">
+            <img src="Paises/cr.png" alt="Logo 7" class="company-logo logo-cr">
+            <img src="Paises/gt.png" alt="Logo 8" class="company-logo logo-gt">
+            <img src="Paises/ni.png" alt="Logo 9" class="company-logo logo-ni">
+            <img src="Paises/pa.png" alt="Logo 9" class="company-logo logo-pa">
+            <img src="Paises/sv.png" alt="Logo 9" class="company-logo logo-sv">
+            <img src="Paises/hn.png" alt="Logo 9" class="company-logo logo-hn">
         </div>
     </header>
+    
+    
 
     <!-- Sección de video de introducción -->
-        <div class="hero-section">
+    <div class="hero-section">
         <video autoplay muted loop class="background-video">
             <source src="intro1.mp4" type="video/mp4">
         </video>
-        <h1 class="hero-title"> Reportes de Inteligencia y Analítica Comercial </h1>
-        </div>
+        <!-- GIF Overlay -->
+        <img src="down.gif" class="gif-overlay" alt="Overlay GIF">
+        <h1 class="hero-title">Reportes de Inteligencia y Analítica Comercial</h1>
+    </div>
 
 
 
@@ -58,10 +74,10 @@
                 <p class="report-description">Resumen general de ventas en CAM.</p>
             </a>
             
-            <!-- <a href="https://lookerstudio.google.com/s/paB9yNXy0bk" class="report-card" target="_blank">
-                <h2 class="report-title">Seg. de Clientes - CR</h2>
-                <p class="report-description">Seguimiento de clientes en Costa Rica.</p>
-            </a> -->
+            <a href="https://app.powerbi.com/reportEmbed?reportId=a04b85e6-11c5-421c-a6fa-17278846fa00&autoAuth=true&ctid=820fb4b7-4c99-4234-8e77-5038c7b08160" class="report-card" target="_blank">
+                <h2 class="report-title">Estacionalidad de la venta - CR</h2>
+                <p class="report-description">Estacionalidad de la venta en Costa Rica.</p>
+            </a> 
             
             <a href="https://lookerstudio.google.com/s/lhuEiUTJcNg" class="report-card" target="_blank">
                 <h2 class="report-title">Seg. de Clientes - CAM</h2>
@@ -73,7 +89,7 @@
                 <p class="report-description">Iniciativas comerciales para CAM.</p>
             </a>
             
-            <a href="https://app.powerbi.com/groups/70ac6d6a-94c8-4980-93ef-a9ef0a1c0e58/dashboards/9eabb931-48c7-469d-921a-206f5ae387f5?ctid=820fb4b7-4c99-4234-8e77-5038c7b08160&OpenAppFromWindowsPCAndTablet=false&openDashboardSource=SubscribeOthers&experience=power-bi" class="report-card" target="_blank">
+            <a href="https://app.powerbi.com/groups/70ac6d6a-94c8-4980-93ef-a9ef0a1c0e58/reports/3533d083-7a0b-49dc-813a-e0a9622d8101?ctid=820fb4b7-4c99-4234-8e77-5038c7b08160&pbi_source=linkShare" class="report-card" target="_blank">
                 <h2 class="report-title">Top 10 Clientes CAM</h2>
                 <p class="report-description">Los 10 principales clientes de CAM.</p>
             </a>
@@ -198,11 +214,6 @@
 
     <footer class="footer">
         <p>&copy; <span id="currentYear"></span> División de Inteligencia y Analítica Comercial. Gerencia de Control y Gestión.</p>
-        <div class="footer-logos">
-           <!-- <img src="logo1.png" alt="Logo 1" class="footer-logo">-->
-           <!-- <img src="logo2.png" alt="Logo 2" class="footer-logo">-->
-           <!-- <img src="logo3.png" alt="Logo 3" class="footer-logo">-->
-        </div>
     </footer>
     
     <div class="intro-title">
@@ -213,16 +224,8 @@
         document.getElementById("currentYear").textContent = new Date().getFullYear();
     </script>
 
-    <script>
-        window.onscroll = function() {
-            var headerText = document.querySelector('.header-text');
-            if (window.scrollY > 100) { // Muestra el texto después de hacer scroll 100px
-                headerText.style.display = 'block';
-            } else {
-                headerText.style.display = 'none';
-            }
-        };
-    </script>
+  
+
     <script>
         const audio = document.getElementById('background-music');
         const button = document.getElementById('audio-button');
@@ -239,4 +242,7 @@
         }
     </script>
 </body>
+
+
 </html>
+
