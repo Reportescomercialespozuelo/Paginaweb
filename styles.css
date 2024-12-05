@@ -15,16 +15,17 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Espaciado uniforme entre elementos */
     z-index: 10;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 0 20px; /* Espaciado lateral */
 }
 
+
 .logo-container {
-    height: 100%;
     display: flex;
     align-items: center;
-    flex-grow: 0.1;
-    justify-content: center;
+    gap: 15px; /* Espaciado entre logos */
 }
 
 .header-text {
@@ -39,11 +40,65 @@ body {
     overflow: hidden; /* Asegura que no se recorte el texto */
 }
 
+/* Tamaño general de los logos */
 .company-logo {
-    max-height: 80%;
-    max-width: 150px;
-    object-fit: contain;
+    object-fit: contain; /* Asegura que la proporción de la imagen se mantenga */
 }
+
+/* Estilos específicos para cada logo */
+.logo-pz {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-be {
+    width: 60px;
+    height: 40px;
+}
+
+.logo-cnch {
+    width: 60px;
+    height: 50px;
+}
+
+.logo-mn {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-tm {
+    width: 80px;
+    height: 60px;
+}
+
+.logo-cc {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* Estilos específicos para los logos de la derecha */
+.logo-cr,
+.logo-gt,
+.logo-ni,
+.logo-pa,
+.logo-sv,
+.logo-hn {
+    width: 40px;
+    height: 40px;
+}
+
+/* Contenedor de logos del lado derecho */
+.right-logos {
+    justify-content: flex-end;
+    padding-right: 20px; /* Agrega espacio entre los logos y el borde derecho */
+}
+
+/* Si prefieres margen en el último logo del lado derecho */
+.right-logos .company-logo:last-child {
+    margin-right: 20px; /* Espacio específico solo para el último logo */
+}
+
 
 /* Sección de video de introducción */
 .hero-section {
@@ -51,6 +106,15 @@ body {
     height: 100vh;
     overflow: hidden;
     position: relative;
+}
+
+.gif-overlay {
+    position: absolute;
+    z-index: 2; /* Above the video */
+    width: 220px; /* Adjust size */
+    height: auto;
+    top: 300px; /* Control position Y */
+    left: 290px; /* Control position X */
 }
 
 .background-video {
@@ -66,7 +130,7 @@ body {
 .hero-title {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
     font-size: 4rem;
     color: #fff;
@@ -93,7 +157,7 @@ body {
 
 /* Estilo para los títulos de las secciones */
 .section-title {
-    font-size: 30px; /* Tamaño del texto */
+    font-size: 40px; /* Tamaño del texto */
     font-weight: bold; /* Negrita */
     color: #fdfdfd; /* Color del texto (puedes cambiarlo por el que prefieras) */
     margin-top: 30px; /* Espacio superior */
@@ -139,7 +203,7 @@ body {
 .report-card {
     display: block; /* Hace que el enlace ocupe toda la tarjeta */
     background: rgba(120, 191, 233, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.457);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -178,23 +242,29 @@ body {
 }
 
 
-/* Estilo para el botón */
 #audio-button {
+    position: fixed; /* Hace que el botón sea flotante */
+    bottom: 20px; /* Posición desde la parte inferior */
+    right: 20px; /* Posición desde la parte derecha */
     background-color: rgb(22, 22, 22);
     color: white;
-    border: none;
+    border: 2px solid #57b9ed;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px; /* Bordes redondeados */
-    align-self: center; /* Centra verticalmente el botón en su contenedor */
-    flex-grow: 0.01;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
 }
-
 
 #audio-button:hover {
-    background-color: #4a4848; /* Color ligeramente más claro al pasar el ratón */
+    background-color: #4a4848; /* Cambia el color al pasar el ratón */
 }
+
+
+
+
+
 
 /* Estilo para las líneas de texto */
 .line {
