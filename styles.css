@@ -133,9 +133,12 @@ body {
     left: 55%;
     transform: translate(-50%, -50%);
     font-size: 4rem;
+    text-align: center; /* Alineación centrada */
     color: #fff;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
 }
+
+
 
 /* Título entre el video y los reportes */
 .intro-title {
@@ -263,11 +266,14 @@ body {
 
 
 
-
-
-
 /* Estilo para las líneas de texto */
 .line {
     font-size: 15px;
     font-weight: bold;
 }
+
+
+
+
+
+
