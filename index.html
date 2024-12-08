@@ -18,6 +18,7 @@
    
 
     <header class="header">
+       
         <!-- Logos del lado izquierdo -->
         <div class="logo-container left-logos">
             <img src="Negocios/pz.png" alt="Logo 1" class="company-logo logo-pz">
@@ -40,16 +41,22 @@
     </header>
     
     
-
     <!-- Sección de video de introducción -->
     <div class="hero-section">
-        <video autoplay muted loop class="background-video">
+        <video autoplay muted loop class="background-video" id="videoSection">
             <source src="intro1.mp4" type="video/mp4">
         </video>
-        <!-- GIF Overlay -->
-        <img src="down.gif" class="gif-overlay" alt="Overlay GIF">
-        <h1 class="hero-title">Reportes de Inteligencia y Analítica Comercial</h1>
+
+        <!-- Contenedor del título y el GIF -->
+        <div class="content-container">
+            <!-- GIF Overlay -->
+            <img src="down.gif" class="gif-overlay" alt="Overlay GIF" id="gifSection">
+
+            <!-- Título principal -->
+            <h1 class="hero-title" id="titleSection">Informes de Analítica e Inteligencia Comercial</h1>
+        </div>
     </div>
+
 
 
 
@@ -75,8 +82,8 @@
             </a>
             
             <a href="https://app.powerbi.com/reportEmbed?reportId=a04b85e6-11c5-421c-a6fa-17278846fa00&autoAuth=true&ctid=820fb4b7-4c99-4234-8e77-5038c7b08160" class="report-card" target="_blank">
-                <h2 class="report-title">Estacionalidad de la venta - CR</h2>
-                <p class="report-description">Estacionalidad de la venta en Costa Rica.</p>
+                <h2 class="report-title">Estacionalidad de la venta - CAM</h2>
+                <p class="report-description">Estacionalidad de la venta en CAM.</p>
             </a> 
             
             <a href="https://lookerstudio.google.com/s/lhuEiUTJcNg" class="report-card" target="_blank">
@@ -224,7 +231,88 @@
         document.getElementById("currentYear").textContent = new Date().getFullYear();
     </script>
 
-  
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Definir la duración del desplazamiento (en milisegundos)
+            const idleTimeLimit = 10000; // 10 segundos de inactividad para activar el scroll automático
+
+            // Definir el punto específico para el desplazamiento (en píxeles)
+            const scrollPoint = 780; // Desplazarse a los 500 píxeles de la página
+
+            // Variable para almacenar el temporizador de inactividad
+            let inactivityTimer;
+
+            // Función para hacer scroll hacia el punto especificado
+            const scrollToPoint = (position) => {
+                window.scrollTo({
+                    top: position, 
+                    behavior: 'smooth' // Scroll suave
+                });
+            };
+
+            // Función para iniciar el scroll automático después de la inactividad
+            const startAutoScroll = () => {
+                // Este setTimeout ejecuta el scroll después de 10 segundos de inactividad
+                inactivityTimer = setTimeout(() => {
+                    scrollToPoint(scrollPoint); // Hacer scroll hacia el punto especificado
+                }, idleTimeLimit);
+            };
+
+            // Iniciar el scroll automático al cargar la página si no hay interacción
+            startAutoScroll();
+
+            // Detener el scroll automático cuando el usuario haga scroll
+            window.addEventListener('scroll', () => {
+                clearTimeout(inactivityTimer); // Detener el temporizador de inactividad
+                // Después de que el usuario haga scroll, no se activará más el scroll automático
+            });
+        });
+    </script>
+
+
+
+
+
+    <script>
+        // Obtener los elementos de video, gif y título
+        const videoElement = document.getElementById('videoSection');
+        const gifElement = document.getElementById('gifSection');
+        const titleElement = document.getElementById('titleSection');
+
+        // Definir el punto de scroll
+        const scrollPoint = 780;
+
+        // Función para hacer el scroll
+        function scrollToPoint() {
+            window.scrollTo({
+                top: scrollPoint,
+                behavior: 'smooth' // Esto agrega una animación de desplazamiento suave
+            });
+        }
+
+        // Agregar el evento de clic a los elementos
+        videoElement.addEventListener('click', scrollToPoint);
+        gifElement.addEventListener('click', scrollToPoint);
+        titleElement.addEventListener('click', scrollToPoint);
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script>
         const audio = document.getElementById('background-music');
