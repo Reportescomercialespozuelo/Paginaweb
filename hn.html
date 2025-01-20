@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligencia y Analítica Comercial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<button id="audio-button" onclick="toggleAudio()">Activar Audio</button>
+
+<body>
+    <audio id="background-music" loop muted>
+        <source src="musica.webm" type="audio/webm">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+   
+
+    <header class="header">
+       
+        <!-- Logos del lado izquierdo -->
+        <div class="logo-container left-logos">
+            <img src="Negocios/pz.png" alt="Logo 1" class="company-logo logo-pz">
+            <img src="Negocios/be.png" alt="Logo 2" class="company-logo logo-be">
+            <img src="Negocios/cnch.png" alt="Logo 3" class="company-logo logo-cnch">
+            <img src="Negocios/mn.png" alt="Logo 4" class="company-logo logo-mn">
+            <img src="Negocios/tm.png" alt="Logo 5" class="company-logo logo-tm">
+            <img src="Negocios/cc.png" alt="Logo 6" class="company-logo logo-cc">
+        </div>
+    
+        <!-- Logos del lado derecho -->
+        <div class="logo-container right-logos">
+            <a href="index.html">
+                <img src="Paises/home.png" alt="Inicio" class="company-logo logo-home">
+            </a>
+            <a href="cr.html">
+                <img src="Paises/cr.png" alt="Costa Rica" class="company-logo logo-cr">
+            </a>
+            <a href="gt.html">
+                <img src="Paises/gt.png" alt="Guatemala" class="company-logo logo-gt">
+            </a>
+            <a href="ni.html">
+                <img src="Paises/ni.png" alt="Nicaragua" class="company-logo logo-ni">
+            </a>
+            <a href="pa.html">
+                <img src="Paises/pa.png" alt="Panamá" class="company-logo logo-pa">
+            </a>
+            <a href="sv.html">
+                <img src="Paises/sv.png" alt="El Salvador" class="company-logo logo-sv">
+            </a>
+            <a href="hn.html">
+                <img src="Paises/hn.png" alt="Honduras" class="company-logo logo-hn">
+            </a>
+        </div>
+            </header>
+    
+    
+    <!-- Sección de video de introducción -->
+    <div class="hero-section">
+
+        <!-- Contenedor del título y el GIF -->
+        <div class="content-container">
+            <!-- Título principal -->
+            <h1 class="hero-title_paises" id="titleSection"> Honduras </h1>
+        </div>
+    </div>
+
+
+
+
+
+
+        <div class="intro-title">
+        </div>
+
+
+
+
+
+
+
+
+    </section>
+
+
+    <div class="intro-title">
+    </div>
+
+    <div class="intro-title">
+    </div>
+
+    <div class="intro-title">
+    </div>
+
+    <footer class="footer">
+        <p>&copy; <span id="currentYear"></span> División de Inteligencia y Analítica Comercial. Gerencia de Control y Gestión.</p>
+    </footer>
+    
+    <div class="intro-title">
+     </div>
+
+    <script>
+        // Script para establecer el año actual en el pie de página
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Definir la duración del desplazamiento (en milisegundos)
+            const idleTimeLimit = 10000; // 10 segundos de inactividad para activar el scroll automático
+
+            // Definir el punto específico para el desplazamiento (en píxeles)
+            const scrollPoint = 780; // Desplazarse a los 500 píxeles de la página
+
+            // Variable para almacenar el temporizador de inactividad
+            let inactivityTimer;
+
+            // Función para hacer scroll hacia el punto especificado
+            const scrollToPoint = (position) => {
+                window.scrollTo({
+                    top: position, 
+                    behavior: 'smooth' // Scroll suave
+                });
+            };
+
+            // Función para iniciar el scroll automático después de la inactividad
+            const startAutoScroll = () => {
+                // Este setTimeout ejecuta el scroll después de 10 segundos de inactividad
+                inactivityTimer = setTimeout(() => {
+                    scrollToPoint(scrollPoint); // Hacer scroll hacia el punto especificado
+                }, idleTimeLimit);
+            };
+
+            // Iniciar el scroll automático al cargar la página si no hay interacción
+            startAutoScroll();
+
+            // Detener el scroll automático cuando el usuario haga scroll
+            window.addEventListener('scroll', () => {
+                clearTimeout(inactivityTimer); // Detener el temporizador de inactividad
+                // Después de que el usuario haga scroll, no se activará más el scroll automático
+            });
+        });
+    </script>
+
+
+
+
+
+    <script>
+        // Obtener los elementos de video, gif y título
+        const videoElement = document.getElementById('videoSection');
+        const gifElement = document.getElementById('gifSection');
+        const titleElement = document.getElementById('titleSection');
+
+        // Definir el punto de scroll
+        const scrollPoint = 780;
+
+        // Función para hacer el scroll
+        function scrollToPoint() {
+            window.scrollTo({
+                top: scrollPoint,
+                behavior: 'smooth' // Esto agrega una animación de desplazamiento suave
+            });
+        }
+
+        // Agregar el evento de clic a los elementos
+        videoElement.addEventListener('click', scrollToPoint);
+        gifElement.addEventListener('click', scrollToPoint);
+        titleElement.addEventListener('click', scrollToPoint);
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const audio = document.getElementById('background-music');
+        const button = document.getElementById('audio-button');
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();  // Reproduce el audio
+                audio.muted = false;  // Desactiva el silencio
+                button.textContent = 'Pausar Audio'; // Cambia el texto del botón
+            } else {
+                audio.pause();  // Pausa el audio
+                button.textContent = 'Activar Audio'; // Cambia el texto del botón
+            }
+        }
+    </script>
+</body>
+
+
+</html>
+
