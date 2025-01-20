@@ -206,7 +206,7 @@ body {
 .report-card {
     display: block; /* Hace que el enlace ocupe toda la tarjeta */
     background: rgba(120, 191, 233, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.457);
+    border: 1px solid #03f9f9;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
