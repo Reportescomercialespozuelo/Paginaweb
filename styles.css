@@ -159,6 +159,13 @@ body {
     text-align: center;
 }
 
+.title-image {
+    height: 2em; /* Mantén el tamaño relativo al texto */
+    margin-left: 10px;
+    vertical-align: middle; /* Asegura alineación vertical con el texto */
+    transform-origin: center; /* Ajusta el punto de rotación al centro */
+}
+
 /* Sección de reportes */
 .reports-section {
     padding: 150px 50px 50px;
