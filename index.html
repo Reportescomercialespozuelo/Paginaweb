@@ -89,10 +89,11 @@
                 <p class="report-description">Resumen de devoluciones y devoluciones en CAM.</p>
             </a>
             
-            <a href="https://lookerstudio.google.com/reporting/a30252fb-e8a8-4db0-9742-27e7c5e45299" class="report-card" target="_blank">
+            <a  class="report-card" target="_blank">
                 <h2 class="report-title">Ventas CAM Resumen</h2>
                 <p class="report-description">Resumen general de ventas en CAM.</p>
             </a>
+            
             
             <a href="https://app.powerbi.com/reportEmbed?reportId=a04b85e6-11c5-421c-a6fa-17278846fa00&autoAuth=true&ctid=820fb4b7-4c99-4234-8e77-5038c7b08160" class="report-card" target="_blank">
                 <h2 class="report-title">Estacionalidad de la venta - CAM</h2>
@@ -104,16 +105,10 @@
                 <p class="report-description">Segmentacion de clientes en CAM.</p>
             </a>
             
-            <a href="https://lookerstudio.google.com/s/qFAMxRIc_8o" class="report-card" target="_blank">
-                <h2 class="report-title">Iniciativas Comerc. CAM</h2>
-                <p class="report-description">Iniciativas comerciales para CAM.</p>
-            </a>
-            
             <a href="https://app.powerbi.com/reportEmbed?reportId=ba0f001f-cab1-4939-836c-db9b0366e53f&autoAuth=true&ctid=820fb4b7-4c99-4234-8e77-5038c7b08160" class="report-card" target="_blank">
                 <h2 class="report-title">Top 10 Clientes CAM</h2>
                 <p class="report-description">Los 10 principales clientes de CAM.</p>
             </a>
-        
             
             <a href="https://app.powerbi.com/reportEmbed?reportId=870f4114-0eff-41e1-b656-435592fafd74&autoAuth=true&ctid=820fb4b7-4c99-4234-8e77-5038c7b08160" class="report-card" target="_blank">
                 <h2 class="report-title">Diag. y proy. de demanda</h2>
@@ -170,10 +165,7 @@
                 <p class="report-description">Seguimiento de combos en NotiTrade (T).</p>
             </a>
 
-            <a href="https://app.powerbi.com/reportEmbed?reportId=0d6bea4d-366f-4c7c-856a-25fc0572704b&autoAuth=true&ctid=820fb4b7-4c99-4234-8e77-5038c7b08160" class="report-card" target="_blank">
-                <h2 class="report-title">Política de Devoluciones</h2>
-                <p class="report-description">Política de devoluciones (T).</p>
-            </a>
+
         </div>
 
 
@@ -187,22 +179,22 @@
             <!-- Repite esta estructura para cada reporte -->
             
             
-            <a href="https://lookerstudio.google.com/reporting/a5699c7a-8678-40a9-bf2e-cd4897d7f167" class="report-card" target="_blank">
+            <a class="report-card" target="_blank">
                 <h2 class="report-title">Puntos Invictus</h2>
                 <p class="report-description">Análisis de los puntos Invictus.</p>
             </a>
         
-            <a href="https://lookerstudio.google.com/s/qFAMxRIc_8o" class="report-card" target="_blank">
+            <a  class="report-card" target="_blank">
                 <h2 class="report-title">Seg de Invictus por Marca</h2>
                 <p class="report-description">Seguimiento de Invictus por marca.</p>
             </a>
 
-            <a href="https://lookerstudio.google.com/s/hvMQRsELWe4" class="report-card" target="_blank">
+            <a  class="report-card" target="_blank">
                 <h2 class="report-title">Concurso Lucchetti</h2>
                 <p class="report-description">Datos relacionados con el concurso Lucchetti.</p>
             </a>
             
-            <a href="https://lookerstudio.google.com/s/tPhwAweHa5I" class="report-card" target="_blank">
+            <a class="report-card" target="_blank">
                 <h2 class="report-title">Navidad 2024</h2>
                 <p class="report-description">Reporte de Navidad 2024.</p>
             </a>
@@ -332,6 +324,41 @@
 
 
 
+    <script>// Selecciona todas las tarjetas  Esto es para ensombrecer los cuadros
+
+        // Selecciona todas las tarjetas
+        const reportCards = document.querySelectorAll(".report-card");
+
+        reportCards.forEach(card => {
+        const href = card.getAttribute("href");
+
+        // Crear el tooltip dinámicamente
+        const tooltip = document.createElement("span");
+        tooltip.classList.add("tooltip");
+        tooltip.textContent = "Informe deshabilitado";
+        document.body.appendChild(tooltip);
+
+        // Si no tiene href, agregar clase "disabled" y gestionar el tooltip
+        if (!href) {
+            card.classList.add("disabled");
+            card.addEventListener("click", event => {
+            event.preventDefault(); // Evitar que se abra el enlace
+            });
+
+            card.addEventListener("mousemove", event => {
+            tooltip.style.display = "block";
+            tooltip.style.left = `${event.pageX + 10}px`; // Ajuste horizontal
+            tooltip.style.top = `${event.pageY + 10}px`; // Ajuste vertical
+            });
+
+            card.addEventListener("mouseleave", () => {
+            tooltip.style.display = "none";
+            });
+        }
+        });
+
+
+    </script>
 
 
 
