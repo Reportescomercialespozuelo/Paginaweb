@@ -176,6 +176,44 @@
 
 
 
+<script>// Selecciona todas las tarjetas  Esto es para ensombrecer los cuadros
+
+    // Selecciona todas las tarjetas
+    const reportCards = document.querySelectorAll(".report-card");
+
+    reportCards.forEach(card => {
+    const href = card.getAttribute("href");
+
+    // Crear el tooltip dinámicamente
+    const tooltip = document.createElement("span");
+    tooltip.classList.add("tooltip");
+    tooltip.textContent = "Informe deshabilitado";
+    document.body.appendChild(tooltip);
+
+    // Si no tiene href, agregar clase "disabled" y gestionar el tooltip
+    if (!href) {
+        card.classList.add("disabled");
+        card.addEventListener("click", event => {
+        event.preventDefault(); // Evitar que se abra el enlace
+        });
+
+        card.addEventListener("mousemove", event => {
+        tooltip.style.display = "block";
+        tooltip.style.left = `${event.pageX + 10}px`; // Ajuste horizontal
+        tooltip.style.top = `${event.pageY + 10}px`; // Ajuste vertical
+        });
+
+        card.addEventListener("mouseleave", () => {
+        tooltip.style.display = "none";
+        });
+    }
+    });
+
+
+</script>
+
+
+
 
 
 
